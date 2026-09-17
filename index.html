@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    
+    <!-- Підключення стилів basicLightbox -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+      /* Базові стилі для галереї */
+      body {
+        font-family: sans-serif;
+        background-color: #f5f5f5;
+      }
+      
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 1128px;
+      }
+      
+      .gallery-item {
+        width: calc((100% - 48px) / 3);
+      }
+      
+      .gallery-link {
+        display: block;
+        text-decoration: none;
+      }
+      
+      .gallery-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .gallery-image:hover {
+        transform: scale(1.04);
+        cursor: zoom-in;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Контейнер галереї -->
+    <ul class="gallery"></ul>
+
+    <!-- Підключення скрипта basicLightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
+    
+    <!-- Твій скрипт -->
+    <script src="./gallery.js" type="module"></script>
+  </body>
+</html>
